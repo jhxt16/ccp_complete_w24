@@ -107,9 +107,9 @@ img {
     border-radius: 10px;
 }
 
-img[loading='lazy'] {
-    background: url('placeholder.jpeg') center center no-repeat;
-}
+/* img[loading="lazy"] {
+    background: url("images/placeholder.jpeg") center center no-repeat;
+} */
 
 .images img, video {
     border: 5px solid #3a4a8d;

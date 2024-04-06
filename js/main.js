@@ -1,3 +1,4 @@
+// Highlight Active Selection
 document.addEventListener('DOMContentLoaded', function() {
     // Select all profile elements
     const profiles = document.querySelectorAll('.profile');
@@ -25,13 +26,21 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // Lazy Loading Images
-document.addEventListener("DOMContentLoaded", function() {
-    const lazyImages = document.querySelectorAll("img[loading='lazy']");
+// document.addEventListener("DOMContentLoaded", function() {
+//     const lazyImages = document.querySelectorAll("img[loading='lazy']");
+//     lazyImages.forEach(img => {
+//         if (img.complete) {
+//             if (img.naturalHeight === 0) {
+//                 img.setAttribute('loading', 'eager');
+//             }
+//         }
+//     });
+// });
+document.addEventListener('DOMContentLoaded', function() {
+    const lazyImages = document.querySelectorAll('img[loading="lazy"]');
     lazyImages.forEach(img => {
-        if (img.complete) {
-            if (img.naturalHeight === 0) {
-                img.setAttribute('loading', 'eager');
-            }
-        }
+        img.addEventListener('load', function() {
+            img.src = img.getAttribute('data-src');
+        });
     });
 });
